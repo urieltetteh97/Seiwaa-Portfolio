@@ -23,9 +23,8 @@ import work19 from '../assets/work/illustrations/SHIRLEY-02.png'
 import work20 from '../assets/work/illustrations/kimpossible and shego.jpg'
 import work21 from '../assets/work/illustrations/ESTELLA.png'
 import work22 from '../assets/work/illustrations/ESTELLA 2.png'
-import work23 from '../assets/work/illustrations/con.jpg'
-import work24 from '../assets/work/print designs/denkyem.jpg'
-import work25 from '../assets/work/print designs/new eras-01.png'
+import work23 from '../assets/work/print designs/denkyem.jpg'
+import work24 from '../assets/work/print designs/new eras-01.png'
 
 // ── Works data ──────────────
 const WORKS = [
@@ -51,9 +50,8 @@ const WORKS = [
   { id: 20, title: 'Kimpossible & Shego', category: 'illustrations', img: work20 },
   { id: 21, title: 'Estella',         category: 'illustrations',     img: work21 },
   { id: 22, title: 'Estella 2',       category: 'illustrations',     img: work22 },
-  { id: 23, title: 'Con',             category: 'illustrations',     img: work23 },
-  { id: 24, title: 'Denkyem',         category: 'print designs', img: work24 },
-  { id: 25, title: 'New Eras',       category: 'print designs', img: work25 },
+  { id: 23, title: 'Denkyem',         category: 'print designs', img: work23 },
+  { id: 24, title: 'New Eras',       category: 'print designs', img: work24 },
 ]
 
 const CATEGORIES = ['All', ...Array.from(new Set(WORKS.map(w => w.category)))]
