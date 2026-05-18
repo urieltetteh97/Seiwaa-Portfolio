@@ -26,13 +26,13 @@ export default function Bio() {
             <div className="space-y-5 text-mist leading-relaxed">
               <p>
                 Seiwaa is a digital fashion artist, illustrator and multimedia creator specializing in 3D garment
-                construction, digital illustration & concept development.
-                traditions of West Africa and the structural precision of contemporary tailoring.
+                construction, digital illustration & concept development,
+                textile design and digital pattern drafting.
               </p>
               <p>
-                Trained at KNUST's Fashion Design programme and later at Central Saint Martins,
-                she returned to Accra determined to build a practice that honoured local craft
-                while speaking to a global audience.
+                She seamlessly integrates technical pattern drafting
+                with premium visual production to capture, design and document
+                the future of digital arts and fashion.
               </p>
               <p>
                 Every piece begins with the wearer — their body, their story, the life they want

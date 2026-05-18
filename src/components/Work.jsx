@@ -1,15 +1,59 @@
 import { useState } from 'react'
 
-// ── Placeholder data — replace with real images/titles ──────────────
+// ── Import images ──────────────
+import work01 from '../assets/work/illustrations/collection.jpg'
+import work02 from '../assets/work/print designs/daasebre.jpg'
+import work03 from '../assets/work/3D render/MFTSKIT.png'
+import work04 from '../assets/work/illustrations/cici.jpg'
+import work05 from '../assets/work/print designs/conceited.jpg'
+import work06 from '../assets/work/illustrations/seiwaa.jpg'
+import work07 from '../assets/work/print designs/new eras-02.png'
+import work08 from '../assets/work/illustrations/storm.jpg'
+import work09 from '../assets/work/3D render/baby.png'
+import work10 from '../assets/work/3D render/IMG_20231219_065335_167.jpg'
+import work11 from '../assets/work/3D render/IMG_20231220_205310_125.jpg'
+import work12 from '../assets/work/3D render/IMG_20231220_205310_414.jpg' 
+import work13 from '../assets/work/3D render/IMG_20231220_205310_683.jpg'
+import work14 from '../assets/work/3D render/IMG_20240103_173843_462.jpg'
+import work15 from '../assets/work/3D render/mfantsiman focus.png'
+import work16 from '../assets/work/3D render/mfantsiman_180.png'
+import work17 from '../assets/work/3D render/tyla-Cover.jpg'
+import work18 from '../assets/work/illustrations/yyy.png'
+import work19 from '../assets/work/illustrations/SHIRLEY-02.png'
+import work20 from '../assets/work/illustrations/kimpossible and shego.jpg'
+import work21 from '../assets/work/illustrations/ESTELLA.png'
+import work22 from '../assets/work/illustrations/ESTELLA 2.png'
+import work23 from '../assets/work/illustrations/con.jpg'
+import work24 from '../assets/work/print designs/denkyem.jpg'
+import work25 from '../assets/work/print designs/new eras-01.png'
+
+// ── Works data ──────────────
 const WORKS = [
-  { id: 1, title: 'Dusk Reverie',    category: 'Bridal',     img: '/images/work-01.jpg' },
-  { id: 2, title: 'Laterite',        category: 'Ready-to-Wear', img: '/images/work-02.jpg' },
-  { id: 3, title: 'Solstice Gown',   category: 'Bridal',     img: '/images/work-03.jpg' },
-  { id: 4, title: 'Urban Nomad',     category: 'Ready-to-Wear', img: '/images/work-04.jpg' },
-  { id: 5, title: 'The Void Blazer', category: 'Bespoke',    img: '/images/work-05.jpg' },
-  { id: 6, title: 'Frangipani',      category: 'Bridal',     img: '/images/work-06.jpg' },
-  { id: 7, title: 'Kente Fragment',  category: 'Bespoke',    img: '/images/work-07.jpg' },
-  { id: 8, title: 'Cloud Nine',      category: 'Ready-to-Wear', img: '/images/work-08.jpg' },
+  { id: 1, title: 'Collection',    category: 'illustrations',     img: work01 },
+  { id: 2, title: 'Daasebre',        category: 'print designs', img: work02 },
+  { id: 3, title: 'MFTSKIT',   category: '3D renders',     img: work03 },
+  { id: 4, title: 'Cici',             category: 'illustrations',     img: work04 },
+  { id: 5, title: 'Conceited',        category: 'print designs', img: work05 },
+  { id: 6, title: 'Seiwaa',           category: 'illustrations',     img: work06 },
+  { id: 7, title: 'New Eras',        category: 'print designs', img: work07 },
+  { id: 8, title: 'Storm',            category: 'illustrations',     img: work08 },
+  { id: 9, title: 'Baby',             category: '3D renders',     img: work09 },
+  { id: 10, title: 'Untitled',       category: '3D renders',     img: work10 },
+  { id: 11, title: 'Untitled',       category: '3D renders',     img: work11 },
+  { id: 12, title: 'Untitled',       category: '3D renders',     img: work12 },
+  { id: 13, title: 'Untitled',       category: '3D renders',     img: work13 },
+  { id: 14, title: 'Untitled',       category: '3D renders',     img: work14 },
+  { id: 15, title: 'Mfantsiman Focus', category: '3D renders',   img: work15 },
+  { id: 16, title: 'Mfantsiman 180', category: '3D renders',     img: work16 },
+  { id: 17, title: 'Tyla Cover',     category: '3D renders',     img: work17 },
+  { id: 18, title: 'YYY',             category: 'illustrations',     img: work18 },
+  { id: 19, title: 'Shirley',         category: 'illustrations',     img: work19 },
+  { id: 20, title: 'Kimpossible & Shego', category: 'illustrations', img: work20 },
+  { id: 21, title: 'Estella',         category: 'illustrations',     img: work21 },
+  { id: 22, title: 'Estella 2',       category: 'illustrations',     img: work22 },
+  { id: 23, title: 'Con',             category: 'illustrations',     img: work23 },
+  { id: 24, title: 'Denkyem',         category: 'print designs', img: work24 },
+  { id: 25, title: 'New Eras',       category: 'print designs', img: work25 },
 ]
 
 const CATEGORIES = ['All', ...Array.from(new Set(WORKS.map(w => w.category)))]
