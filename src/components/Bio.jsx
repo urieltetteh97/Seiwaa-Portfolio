@@ -1,3 +1,6 @@
+import portrait from '../assets/work/portraits/1779125052923.jpg'
+
+
 export default function Bio() {
   return (
     <section id="about" className="py-24 md:py-32 border-t border-white/5">
@@ -9,7 +12,7 @@ export default function Bio() {
             {/* Decorative frame offset */}
             <div className="absolute -top-4 -left-4 w-full h-full border border-accent/30 pointer-events-none" />
             <img
-              src="/images/designer.jpg"
+              src={portrait}
               alt="Designer portrait"
               className="relative w-full aspect-[3/4] object-cover object-top"
             />
