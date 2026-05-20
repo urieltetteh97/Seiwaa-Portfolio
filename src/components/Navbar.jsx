@@ -14,9 +14,9 @@ export default function Navbar() {
       <div className="section-wrapper flex items-center justify-between h-16">
 
         {/* Logo / wordmark */}
-        <a href="#" className="font-heading text-sm tracking-ultra uppercase text-canvas">
+        <a href="#" className="font-heading text-sm tracking-ultra hover:text-accent hover:scale-125 transition-all duration-200 uppercase">
           {/* Replace with designer's name */}
-          Serwandyy
+          Seiwaa
         </a>
 
         {/* Desktop nav */}
