@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="border-t border-white/5 py-10">
       <div className="section-wrapper flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="eyebrow text-mist/50">
-          © {year} Amara Osei. All rights reserved.
+          © {year} Seiwaa. All rights reserved.
         </p>
 
         <nav className="flex gap-8">
@@ -13,7 +13,7 @@ export default function Footer() {
             { label: 'Work',      href: '#work'    },
             { label: 'About',     href: '#about'   },
             { label: 'Contact',   href: '#contact' },
-            { label: 'Instagram', href: 'https://instagram.com' },
+            { label: 'Instagram', href: 'https://instagram.com/seiwaadraws' },
           ].map(({ label, href }) => (
             <a
               key={label}
