@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 // ── Import images ──────────────
 import work01 from '../assets/work/illustrations/collection.jpg'
@@ -58,6 +58,21 @@ const CATEGORIES = ['All', ...Array.from(new Set(WORKS.map(w => w.category)))]
 
 export default function Work() {
   const [active, setActive] = useState('All')
+  const [selectedWork, setSelectedWork] = useState(null)
+
+  // Close modal on Escape key
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setSelectedWork(null)
+      }
+    }
+
+    if (selectedWork) {
+      window.addEventListener('keydown', handleKeyDown)
+      return () => window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [selectedWork])
 
   const filtered = active === 'All' ? WORKS : WORKS.filter(w => w.category === active)
 
@@ -93,17 +108,25 @@ export default function Work() {
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5">
           {filtered.map(work => (
-            <WorkCard key={work.id} work={work} />
+            <WorkCard key={work.id} work={work} onImageClick={setSelectedWork} />
           ))}
         </div>
+
+        {/* Image Modal */}
+        {selectedWork && (
+          <ImageModal work={selectedWork} onClose={() => setSelectedWork(null)} />
+        )}
       </div>
     </section>
   )
 }
 
-function WorkCard({ work }) {
+function WorkCard({ work, onImageClick }) {
   return (
-    <article className="group relative bg-ink overflow-hidden aspect-[3/4] cursor-pointer">
+    <article 
+      onClick={() => onImageClick(work)}
+      className="group relative bg-ink overflow-hidden aspect-[3/4] cursor-pointer"
+    >
       {/* Image */}
       <img
         src={work.img}
@@ -120,5 +143,44 @@ function WorkCard({ work }) {
         <h3 className="font-heading text-lg text-canvas">{work.title}</h3>
       </div>
     </article>
+  )
+}
+
+function ImageModal({ work, onClose }) {
+  return (
+    <div 
+      className="fixed inset-0 z-50 bg-ink/90 backdrop-blur-sm flex items-center justify-center p-4"
+      onClick={onClose}
+    >
+      {/* Close button */}
+      <button
+        onClick={onClose}
+        className="absolute top-6 right-6 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+        aria-label="Close image"
+      >
+        <svg className="w-6 h-6 text-canvas" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      {/* Modal content */}
+      <div 
+        className="max-w-4xl max-h-[90vh] flex flex-col items-center gap-4"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Image */}
+        <img
+          src={work.img}
+          alt={work.title}
+          className="max-w-full max-h-[75vh] object-contain rounded-lg"
+        />
+
+        {/* Work info */}
+        <div className="text-center">
+          <p className="eyebrow mb-1 text-mist">{work.category}</p>
+          <h3 className="font-heading text-2xl text-canvas">{work.title}</h3>
+        </div>
+      </div>
+    </div>
   )
 }
