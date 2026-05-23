@@ -34,10 +34,10 @@ export default function Contact() {
             {/* Contact details */}
             <ul className="mt-10 space-y-5">
               {[
-                { label: 'Email',     value: 'hello@amaraosei.com',  href: 'mailto:hello@amaraosei.com'  },
+                { label: 'Email',     value: 'Sbserwaa98@gmail.com',  href: 'mailto:Sbserwaa98@gmail.com'  },
                 { label: 'Phone',     value: '+233 20 000 0000',      href: 'tel:+233200000000'           },
                 { label: 'Location',  value: 'Accra, Ghana',          href: null                          },
-                { label: 'Instagram', value: '@amaraoseidesigns',      href: 'https://instagram.com'       },
+                { label: 'Instagram', value: '@seiwaadraws',      href: 'https://instagram.com/seiwaadraws'       },
               ].map(({ label, value, href }) => (
                 <li key={label} className="flex gap-6 items-baseline">
                   <span className="eyebrow w-20 shrink-0">{label}</span>
